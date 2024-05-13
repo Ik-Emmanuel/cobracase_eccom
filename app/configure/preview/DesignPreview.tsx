@@ -127,6 +127,7 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
                 isLoading={true}
                 loadingText="loading"
                 className="px-4 sm:px-6 lg:px-8"
+                disabled={true;}
               >
                 {" "}
                 Checkout <ArrowRight className="h-4 w-4 ml-1.5 inline" />
