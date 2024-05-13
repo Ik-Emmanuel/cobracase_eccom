@@ -123,7 +123,11 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
             </div>
 
             <div className="mt-8 flex justify-end pb-12">
-              <Button className="px-4 sm:px-6 lg:px-8">
+              <Button
+                isLoading={true}
+                loadingText="loading"
+                className="px-4 sm:px-6 lg:px-8"
+              >
                 {" "}
                 Checkout <ArrowRight className="h-4 w-4 ml-1.5 inline" />
               </Button>
