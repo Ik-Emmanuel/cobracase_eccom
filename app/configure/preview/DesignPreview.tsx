@@ -45,12 +45,16 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
       }
     },
 
-    onError: () => {
+    onError: (msg) => {
       toast({
-        title: "An error occurred",
-        description:
-          "Stripe session generation error, Error on our end, please try again",
-        variant: "destructive",
+        title: `An error occurred`,
+        description: `${
+          msg
+            ? msg
+            : "Stripe session generation error, Error on our end, please try again"
+        }`,
+
+        variant: `${msg ? "default" : "destructive"}`,
       });
     },
   });
