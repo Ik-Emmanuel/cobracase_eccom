@@ -11,4 +11,4 @@ export const PRODUCT_PRICES = {
 } as const
 
 
-export const BASE_PRICE = 4_00
+export const BASE_PRICE = 10_00
