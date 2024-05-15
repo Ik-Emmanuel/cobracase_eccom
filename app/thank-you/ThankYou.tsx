@@ -11,9 +11,12 @@ const ThankYou = () => {
   const searchParams = useSearchParams();
   const orderId = searchParams.get("orderId") || "";
 
+  //simulate stripe webhook once here just update db as paid
+
   const { data } = useQuery({
     queryKey: ["get-payment-status"],
     queryFn: async () => await getPaymentStatus({ orderId }),
+    // polling approach ... keeping trying until something happens
     retry: true,
     retryDelay: 500,
   });

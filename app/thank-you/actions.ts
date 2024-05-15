@@ -11,6 +11,16 @@ export const getPaymentStatus = async ({ orderId }: { orderId: string }) => {
         throw new Error('You need to be logged in to view this page.')
     }
 
+    // simulate stripe webhook and set ispaid to true
+    const updateorder = await db.order.update({
+        where: { id: orderId, userId: user.id },
+        data:{
+            isPaid: true
+        }
+    })
+
+    console.log("Order updated")
+
     const order = await db.order.findFirst({
         where: { id: orderId, userId: user.id },
         include: {
