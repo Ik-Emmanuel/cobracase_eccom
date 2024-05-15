@@ -47,5 +47,6 @@ export function constructMetadata({
     },
     icons,
     metadataBase: new URL("https://casecobra.vercel.app/")
+    // this should be your deployed production url 
   }
 }
